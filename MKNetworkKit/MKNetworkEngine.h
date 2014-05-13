@@ -36,7 +36,7 @@
  *  @discussion
  *	This class is the heart of MKNetworkEngine
  *  You create network operations and enqueue them here
- *  MKNetworkEngine encapsulates a Reachability object that relieves you of managing network connectivity losses
+ *  MKNetworkEngine encapsulates a MKReachability object that relieves you of managing network connectivity losses
  *  MKNetworkEngine also allows you to provide custom header fields that gets appended automatically to every request
  */
 @interface MKNetworkEngine : NSObject
@@ -46,7 +46,7 @@
  *  @discussion
  *	Creates an engine for a given host name
  *  The hostname parameter is optional
- *  The hostname, if not null, initializes a Reachability notifier.
+ *  The hostname, if not null, initializes a MKReachability notifier.
  *  Network reachability notifications are automatically taken care of by MKNetworkEngine
  *  
  */
@@ -58,7 +58,7 @@
  *  @discussion
  *	Creates an engine for a given host name
  *  The default headers you specify here will be appened to every operation created in this engine
- *  The hostname, if not null, initializes a Reachability notifier.
+ *  The hostname, if not null, initializes a MKReachability notifier.
  *  Network reachability notifications are automatically taken care of by MKNetworkEngine
  *  Both parameters are optional
  *  
@@ -73,7 +73,7 @@
  *  The hostname parameter is optional
  *  The apiPath paramter is optional
  *  The apiPath is prefixed to every call to operationWithPath: You can use this method if your server's API location is not at the root (/)
- *  The hostname, if not null, initializes a Reachability notifier.
+ *  The hostname, if not null, initializes a MKReachability notifier.
  *  Network reachability notifications are automatically taken care of by MKNetworkEngine
  *  
  */
@@ -88,7 +88,7 @@
  *  The port parameter can be 0, which means to use the appropriate default port (80 or 443 for HTTP or HTTPS respectively).
  *  The apiPath paramter is optional
  *  The apiPath is prefixed to every call to operationWithPath: You can use this method if your server's API location is not at the root (/)
- *  The hostname, if not null, initializes a Reachability notifier.
+ *  The hostname, if not null, initializes a MKReachability notifier.
  *  Network reachability notifications are automatically taken care of by MKNetworkEngine
  *
  */
