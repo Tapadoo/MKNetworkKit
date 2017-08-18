@@ -43,7 +43,7 @@
 @interface MKNetworkEngine (/*Private Methods*/)
 
 @property (copy, nonatomic) NSString *hostName;
-@property (strong, nonatomic) MKReachability *reachability;
+@property (strong, nonatomic) Reachability *reachability;
 @property (copy, nonatomic) NSDictionary *customHeaders;
 @property (assign, nonatomic) Class customOperationSubclass;
 
@@ -111,11 +111,11 @@ static NSOperationQueue *_sharedNetworkQueue;
     if(hostName) {
       [[NSNotificationCenter defaultCenter] addObserver:self
                                                selector:@selector(reachabilityChanged:)
-                                                   name:kMKReachabilityChangedNotification
+                                                   name:kReachabilityChangedNotification
                                                  object:nil];
       
       self.hostName = hostName;
-      self.reachability = [MKReachability reachabilityWithHostname:self.hostName];
+      self.reachability = [Reachability reachabilityWithHostname:self.hostName];
       
       dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
@@ -166,7 +166,7 @@ static NSOperationQueue *_sharedNetworkQueue;
 #endif
 #endif
   
-  [[NSNotificationCenter defaultCenter] removeObserver:self name:kMKReachabilityChangedNotification object:nil];
+  [[NSNotificationCenter defaultCenter] removeObserver:self name:kReachabilityChangedNotification object:nil];
 #if TARGET_OS_IPHONE
   [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
   [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
