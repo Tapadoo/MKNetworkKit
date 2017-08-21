@@ -7,5 +7,5 @@ workspace 'MKNetworkKit'
 
 target 'MKNetworkKit-iOS' do
   project 'MKNetworkKit-iOS/MKNetworkKit-iOS'
-  pod 'Reachability', '~> 3.1.0'
+  pod 'Reachability', '~> 3.2.0'
 end
